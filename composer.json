@@ -1,0 +1,32 @@
+{
+    "name": "xinix-technology/metronic-theme",
+    "description": "Bono needs new theme using metronic. It's morhpin time",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Xinix Technology",
+            "email": "hello@sagara.id"
+        },
+        {
+            "name": "Wahyu Taufik",
+            "email": "wahyutaufik37@gmail.com"
+        },
+        {
+            "name": "Januar Siregar",
+            "email": "januar.siregar@gmail.com"
+        }
+    ],
+    "require": {
+        "xinix-technology/blade-theme": "~1.0.0"
+    },
+    "autoload": {
+        "psr-0": {
+            "Xinix\\Theme\\MetronicTheme": "src/"
+        }
+    },
+    "scripts": {
+        "post-autoload-dump": [
+            "bower install"
+        ]
+    }
+}
