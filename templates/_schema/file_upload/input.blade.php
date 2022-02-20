@@ -1,26 +1,22 @@
-<fileupload class="fileupload fileupload-new"  data-url="{{ $url }}" data-bucket="{{ $self['bucket'] }}">
-    <div class="input-group">
-        <div class="form-control" >
-            <i class="fa fa-file fileinput-exists"></i>&nbsp;
-            <span class="fileupload-filename"> </span>
-            @if(count($value) > 0)
-                <input type="hidden" name="{{ $self['name'] }}" id="{{ $self['name'] }}" value='{{ json_encode($value) }}'/>
-            @else
-                <input type="hidden" name="{{ $self['name'] }}" id="{{ $self['name'] }}" />
-            @endif
+<fileupload>
+    <div class="dropzone fileupload" data-url="{{ $url }}" data-bucket="{{ $self['bucket'] }}">
+        @if(count($value) > 0)
+            <input type="hidden" name="{{ $self['name'] }}" id="{{ $self['name'] }}" value='{{ json_encode($value) }}'/>
+        @else
+            <input type="hidden" name="{{ $self['name'] }}" id="{{ $self['name'] }}" />
+        @endif
+        <!--begin::Message-->
+        <div class="dz-message needsclick">
+            <!--begin::Icon-->
+            <i class="bi bi-file-earmark-arrow-up text-primary fs-3x"></i>
+            <!--end::Icon-->
+    
+            <!--begin::Info-->
+            <div class="ms-4">
+                <h3 class="fs-5 fw-bolder text-gray-900 mb-1">Click to upload.</h3>
+                <span class="fs-7 fw-bold text-gray-400">Upload only 1 file</span>
+            </div>
+            <!--end::Info-->
         </div>
-        <input type="file"> 
-        <span class="input-group-append" >
-            <a href="javascript:;" type="button" class="btn btn-danger fileupload-exists" data-dismiss="fileinput"> Remove </a>
-            <button type="button" class="btn btn-primary " >
-                <span class="spinner">
-                    <i class="fa fa-spinner fa-spin"></i>
-                </span>
-                <span class="label-spinner">
-                    <span class="fileupload-new"> Select file </span>
-                    <span class="fileupload-exists"> Change </span>
-                <span>
-            </button>
-        </span>
     </div>
 </fileupload>

@@ -12,7 +12,7 @@
 	}
 
 ?>
-<select name="<?php echo isset($name) ? $name : $self['name'] ?>[]" multiple>
+<select name="<?php echo isset($name) ? $name : $self['name'] ?>[]" class="form-control form-control-solid" multiple>
     <?php foreach ($self->optionData() as $key => $entry): ?>
         <option value="<?php echo $self->optionValue($key,$entry) ?>" <?php echo (!empty($datavalue[$self->optionValue($key,$entry)]) ? 'selected' : '') ?>>
             <?php echo $self->optionLabel($key,$entry) ?>

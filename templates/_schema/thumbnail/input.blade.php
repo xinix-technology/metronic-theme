@@ -1,15 +1,28 @@
-<div class="image-input image-input-outline image-input-empty" id="kt_image" style="background-image: url('{{ Theme::base('assets/media/users/blank.png') }}')" data-url="{{ $url }}" data-bucket="{{ $self['bucket'] }}">
-    <div class="image-input-wrapper"></div>
-    <label class="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow" data-action="change" data-toggle="tooltip" title="" data-original-title="Change {{ $self['name'] }}">
-        <i class="fa fa-pen icon-sm text-muted"></i>
-        <input type="file"  class="file-upload" accept=".png, .jpg, .jpeg" />
+
+<!--begin::Image input-->
+<div class="image-input image-input-empty thumbnail-input" data-kt-image-input="true" style="background-image: url({{Theme::base('/assets/metronic/media/avatars/blank.png')}})" data-url="{{ $url }}" data-bucket="{{ $self['bucket'] }}">
+     <!--begin::Image preview wrapper-->
+     <div class="image-input-wrapper w-125px h-125px"></div>
+     <!--end::Image preview wrapper-->
+
+     <!--begin::Edit button-->
+     <label class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-white shadow"
+        data-kt-image-input-action="change"
+        data-bs-toggle="tooltip"
+        data-bs-dismiss="click"
+        title="Change avatar"
+    >
+        <i class="bi bi-pencil-fill fs-7"></i>
         @if(count($value) > 0)
         <input type="hidden" name="{{ $self['name'] }}" id="{{ $self['name'] }}" value='{{ json_encode($value) }}'/>
         @else
         <input type="hidden" name="{{ $self['name'] }}" id="{{ $self['name'] }}" />
         @endif
-    </label>
-    <span class="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow" data-action="cancel" data-toggle="tooltip" title="Remove {{ $self['name'] }}">
-        <i class="ki ki-bold-close icon-xs text-muted"></i>
-    </span>
-</div>
+
+        <!--begin::Inputs-->
+        <input type="file" accept=".png, .jpg, .jpeg" />
+        <!--end::Inputs-->
+     </label>
+     <!--end::Edit button-->
+ </div>
+ <!--end::Image input-->
